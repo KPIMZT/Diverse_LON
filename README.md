@@ -83,15 +83,11 @@ python NS_ex.py
 ```
 
 RQ3
-benchmark:
+benchmark, correlation and reggression analysi:
 ```terminal
-python benchmark_ex.py
+python benchmark_cor_reg_ex.py
 ```
 
-correlation and reggression analysis:
-```terminal
-python cor_ex.py
-```
 
 
 
