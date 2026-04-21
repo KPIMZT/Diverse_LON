@@ -16,12 +16,11 @@ def run_ex_RQ3(F, dim, seed, trace):
         coord_tol = 1e-2
         alg_names = ["CMA-ES","DE"]
         for alg in alg_names:
+            bench_path = f"./results_Benchmark_trace/dim{dim}_seed{seed}_all_{alg}.csv"
             if trace == "y":
-                bench_path = f"./results_Benchmark_trace/dim{dim}_seed{seed}_all_{alg}.csv"
                 ns_path = f"./results_NS_trace/dim{dim}_seed{seed}.pt"
                 save_path = "./results_cor_reg_trace"
             else:
-                bench_path = f"./results_Benchmark/dim{dim}_seed{seed}_all_{alg}.csv"
                 ns_path = f"./results_NS/dim{dim}_seed{seed}.pt"
                 save_path = "./results_cor_reg"
 
