@@ -59,7 +59,7 @@ pip install -r requirements.txt
 ```
 
 ## Step8. Download NS result data
-If you want to replicate the experiments after the benchmark without running NS, please download the data from Zenodo (https://doi.org/10.5281/zenodo.19630354)
+If you want to replicate the experiments before the benchmark without running NS, please download the data from Zenodo (https://doi.org/10.5281/zenodo.19630354)
 
 directory structure  
 
