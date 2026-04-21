@@ -26,7 +26,7 @@ def run_ex_RQ2(dim, seed, I):
         init_parents="archetype" #"archetype"(NS+) or "random"(NS)
         ns_path = f"./results_NS_trace/dim{dim}_seed{seed}.pt"
     elif I == "n":
-        init_parents="random" #"archetype"(NS+) or "random"(NS)
+        init_parents="random"
         ns_path = f"./results_NS_trace/dim{dim}_seed{seed}_nonarch.pt"
     plus_comma="plus"
     compute_random_baseline=True
@@ -39,8 +39,13 @@ def run_ex_RQ2(dim, seed, I):
                         use_crossover=use_crossover, init_parents=init_parents, plus_comma=plus_comma, compute_random_baseline=compute_random_baseline)
     ns.run()
     ns.compute_coverage_all(scale=None, bins=30)
-    plot_grid(ns, population="random")
-    plot_grid(ns, population="novelty")
+    colors = ["#0072B2",  "#009E73", "#E69F00"]
+    from ns_viz import plot_grid_mpl
+    if I == "y":
+        plot_grid_mpl(ns, population="novelty", color_discovered= colors[2], save_path=f"./results_NS_trace/dim{dim}_seed{seed}_arch.svg")
+    elif I == "n":
+        plot_grid_mpl(ns, population="novelty", color_discovered= colors[1], save_path=f"./results_NS_trace/dim{dim}_seed{seed}_nonarch.svg")
+        plot_grid_mpl(ns, population="random", color_discovered= colors[0], save_path=f"./results_NS_trace/dim{dim}_seed{seed}_random.svg")
     save_ns(ns, ns_path)
 
 
@@ -94,13 +99,13 @@ if __name__ == "__main__":
     if F == "y":
         plot_coverage_boxplot(result_dir="./results_NS")
     elif F == "n":
-        F2 = input("Do you want to run NS? (Execution time will vary depending on dim and generations) (y/n):")
+        F2 = input("Do you want to run NS? (Execution time will vary depending on dimensions and generations) (y/n):")
         if F2 == "y":
-            F3 = input("Are you going to run all the NS experiments? That will take a lot of time. Entering 'n' will enter a mode for partial execution (y/n):")
+            F3 = input("Are you going to run all the NS experiments? That will take a lot of time. Entering 'n'　will switch to partial execution mode (y/n):")
             if F3 == "y":
                 run_ex_RQ2_all()
             elif F3 == "n":
                 dim = int(input("Please enter the number of dimensions. In the paper, we experimented with 2, 5, and 10 dimensions:"))
-                seed = int(input("Please enter a seed. Numbers 0-9 have result data from our experiments:"))
-                I = str(input("Do you want to use archetype(for NS+)? (y/n):"))
+                seed = int(input("Please enter a seed. Seeds 0–9 have pre-computed result data from our experiments:"))
+                I = str(input("Do you want to use archetype (for NS+)? (y/n):"))
                 run_ex_RQ2(dim, seed, I)

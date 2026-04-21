@@ -66,6 +66,7 @@ def compute_rf(
         rf_r2_cv  = float(np.mean(cv_scores))
         rf.fit(Xm, ym)
         models[metric] = rf
+        r2_rows.append({"metric": metric, "rf_r2_cv": rf_r2_cv})
     df_r2_cv = pd.DataFrame(r2_rows).set_index("metric")
     return df_r2_cv, models
 

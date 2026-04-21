@@ -238,7 +238,7 @@ def visualize_comparison(
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
         print(f"  saved: {save_path}")
-    plt.show()
+    # plt.show()
 
 
 # ── main ──────────────────────────────────────────────────────────────────────

@@ -141,19 +141,6 @@ def plot_cor_alldim(
         save:       bool = None,
         metrics:    list[str] | None = None,
 ):
-    """
-    Plot Spearman correlation bar chart for all dimensions (D=2, 5, 10).
-
-    Parameters
-    ----------
-    result_dir : directory containing *_spearman.csv files
-    dim_seeds  : {dim: seed} mapping, e.g. {2: 3, 5: 4, 10: 9}
-                 File name pattern: dim{D}_seed{S}_{ALG}_spearman.csv
-    alg_name   : algorithm name(s) to plot (str or list of str, e.g. ["CMA-ES", "DE"])
-    metrics    : list of metric names to plot; None = all metrics
-    save       : if True, save figure to file; otherwise plt.show()
-    """
-
     if isinstance(alg_name, str):
         alg_name = [alg_name]
 
