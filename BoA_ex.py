@@ -262,7 +262,7 @@ def run_ex_RQ1(
     R          = num_gauss ** (-1 / dim)
     sigma_max  = 3 * R
     sigma_min  = R / 4
-
+    os.makedirs(save_dir, exist_ok=True)
     dim_save_dir = os.path.join(save_dir, f"dim{dim}")
     os.makedirs(dim_save_dir, exist_ok=True)
 
