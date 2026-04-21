@@ -14,8 +14,6 @@ from typing import List, Tuple
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score, KFold
 from scipy.stats import spearmanr
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
 from cor_viz import plot_feature_grid
 
 

@@ -81,7 +81,7 @@ def run_ex_RQ2_all():
                                 novelty_threshold=novelty_threshold, novelty_k=novelty_k,
                                 alpha_std=alpha_std, alpha_min=alpha_min, sigma_std=sigma_std, sigma_max=sigma_max, sigma_min=sigma_min,
                                 use_crossover=use_crossover, init_parents=init_parents, plus_comma=plus_comma, compute_random_baseline=compute_random_baseline)
-                ns.run()       
+                ns.run()
                 ns.compute_coverage_all(scale=None, bins=30)
                 save_ns(ns, ns_path)
 
@@ -92,7 +92,7 @@ def run_ex_RQ2_all():
 if __name__ == "__main__":
     F = input("Do you want to display a boxplot using the result data for each dimension? (No experiment will be conducted) (y/n):")
     if F == "y":
-        plot_coverage_boxplot(result_dir="./results_NS_paper")
+        plot_coverage_boxplot(result_dir="./results_NS")
     elif F == "n":
         F2 = input("Do you want to run NS? (Execution time will vary depending on dim and generations) (y/n):")
         if F2 == "y":
