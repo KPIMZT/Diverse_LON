@@ -42,10 +42,13 @@ def run_ex_RQ3(F, dim, seed, trace):
         
         
 if __name__ == "__main__":
-    F = input("Do you want to display a boxplot using the result data for each dimension?(No experiment will be conducted) (y/n):")
-    dim = int(input("Please enter the number of dimensions. In the paper, we experimented with 2, 5, and 10 dimensions.:"))
-    seed = int(input("Please enter a seed. Numbers 0-9 have result data.:"))
-    trace = str(input("Do you want to use trace NS results? (y/n):"))
-    run_ex_RQ3(F, dim, seed, trace)
+    F = input("Do you want to display a boxplot using the result data for each dimension? (No experiment will be conducted) (y/n):")
+    if F == "y":
+        run_ex_RQ3(F, None, None, None)
+    elif F == "n":
+        dim = int(input("Please enter the number of dimensions. In the paper, we experimented with 2, 5, and 10 dimensions:"))
+        seed = int(input("Please enter a seed. Numbers 0-9 have result data:"))
+        trace = str(input("Do you want to use trace NS results? (y/n):"))
+        run_ex_RQ3(F, dim, seed, trace)
 
 
