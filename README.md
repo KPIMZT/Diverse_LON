@@ -1,4 +1,4 @@
-# MSGLON_NS
+# Diverse_LON
 
 This repository provides code to reproduce the experiment described in “Novelty-Based Generation of Continuous Landscapes with Diverse Local Optima Networks”.
 
