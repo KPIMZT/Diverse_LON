@@ -1,0 +1,3 @@
+algorithm,metric,num_nodes,edge_density,num_sink,avg_path_sinks,avg_path_opt,in_strength_sinks,in_strength_opt,global_funnel_size
+CMA-ES,success_rate,-0.4439,0.1692,-0.5938,-0.3952,-0.4555,0.413,0.8889,0.8158
+CMA-ES,conv_time,0.3155,-0.1371,-0.148,0.2449,0.0755,0.2071,0.1767,0.1109
