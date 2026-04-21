@@ -16,15 +16,15 @@ def run_ex_RQ3(F, dim, seed, trace, run_bench):
         coord_tol = 1e-2
         alg_names = ["CMA-ES","DE"]
         for alg in alg_names:
-            bench_path = f"./results_Benchmark_trace/dim{dim}_seed{seed}_all_{alg}.csv"
-            save_path = "./results_cor_reg_trace"
+            bench_path = f"./results_Benchmark_reproduction/dim{dim}_seed{seed}_all_{alg}.csv"
+            save_path = "./results_cor_reg_reproduction"
             if trace == "y":
-                ns_path = f"./results_NS_trace/dim{dim}_seed{seed}.pt"
+                ns_path = f"./results_NS_reproduction/dim{dim}_seed{seed}.pt"
             else:
                 ns_path = f"./results_NS/dim{dim}_seed{seed}.pt"
 
             if run_bench == "y":
-                bench_path = f"./results_Benchmark_trace/dim{dim}_seed{seed}_all_{alg}.csv"
+                bench_path = f"./results_Benchmark_reproduction/dim{dim}_seed{seed}_all_{alg}.csv"
                 run_benchmark(n_trials=n_trials, max_evals=max_evals, coord_tol=coord_tol, seed=seed,
                                             bench_path=bench_path, ns_path=ns_path, alg_names=[alg], device="cpu")
 

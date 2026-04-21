@@ -24,10 +24,10 @@ def run_ex_RQ2(dim, seed, I):
     use_crossover=False
     if I == "y":
         init_parents="archetype" #"archetype"(NS+) or "random"(NS)
-        ns_path = f"./results_NS_trace/dim{dim}_seed{seed}.pt"
+        ns_path = f"./results_NS_reproduction/dim{dim}_seed{seed}.pt"
     elif I == "n":
         init_parents="random"
-        ns_path = f"./results_NS_trace/dim{dim}_seed{seed}_nonarch.pt"
+        ns_path = f"./results_NS_reproduction/dim{dim}_seed{seed}_nonarch.pt"
     plus_comma="plus"
     compute_random_baseline=True
 
@@ -42,10 +42,10 @@ def run_ex_RQ2(dim, seed, I):
     colors = ["#0072B2",  "#009E73", "#E69F00"]
     from ns_viz import plot_grid_mpl
     if I == "y":
-        plot_grid_mpl(ns, population="novelty", color_discovered= colors[2], save_path=f"./results_NS_trace/dim{dim}_seed{seed}_arch.svg")
+        plot_grid_mpl(ns, population="novelty", color_discovered= colors[2], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_arch.svg")
     elif I == "n":
-        plot_grid_mpl(ns, population="novelty", color_discovered= colors[1], save_path=f"./results_NS_trace/dim{dim}_seed{seed}_nonarch.svg")
-        plot_grid_mpl(ns, population="random", color_discovered= colors[0], save_path=f"./results_NS_trace/dim{dim}_seed{seed}_random.svg")
+        plot_grid_mpl(ns, population="novelty", color_discovered= colors[1], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_nonarch.svg")
+        plot_grid_mpl(ns, population="random", color_discovered= colors[0], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_random.svg")
     save_ns(ns, ns_path)
 
 
@@ -77,9 +77,9 @@ def run_ex_RQ2_all():
                 plus_comma="plus"
                 compute_random_baseline=True
                 if init_parents == "archetype":
-                    ns_path = f"./results_NS_trace/dim{dim}_seed{seed}.pt"
+                    ns_path = f"./results_NS_reproduction/dim{dim}_seed{seed}.pt"
                 else:
-                    ns_path = f"./results_NS_trace/dim{dim}_seed{seed}_nonarch.pt"
+                    ns_path = f"./results_NS_reproduction/dim{dim}_seed{seed}_nonarch.pt"
 
                 ns = NSGeneration(num_gauss=num_gauss, dim=dim, _mu=_mu, _lambda=_lambda, generations=generations,
                                 r=r, num_samples=num_sample, feature_type=feature_type, device=device, seed=seed,
