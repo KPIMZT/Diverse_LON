@@ -52,7 +52,7 @@ if __name__ == "__main__":
     if F == "y":
         run_ex_RQ3(F, None, None, None, None)
     elif F == "n":
-        trace = str(input("Do you want to use NS trace results? (y/n):"))
+        trace = str(input("Do you want to use NS reproduction results? (y/n):"))
         dim = int(input("Please enter the number of dimensions d. In the paper, we experimented with 2, 5, and 10 dimensions:"))
         seed = int(input("Please enter a seed. Pre-computed result data is available for seeds d=2⇒3, d=5⇒4, d=10⇒9:"))
         run_bench = str(input("Do you want to run the benchmark? Entering 'n' will run correlation analysis only using existing data. (y/n):"))
