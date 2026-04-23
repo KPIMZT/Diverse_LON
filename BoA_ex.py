@@ -183,9 +183,9 @@ def visualize_comparison(
     save_path:   Optional[str] = None,
 ):
     plt.rcParams.update({
-        "text.usetex": True,
+        "text.usetex": False,
         "font.family": "serif",
-        "text.latex.preamble": r"\usepackage{amsmath}",
+        "mathtext.fontset": "cm",
     })
     """D=2 only: side-by-side basin maps + disagreement."""
     K = opt_means.shape[0]
@@ -215,7 +215,7 @@ def visualize_comparison(
     fig, axes = plt.subplots(1, 3, figsize=(15, 5))
     for ax, data, title in zip(axes[:2],
                                 [ana_map.T, gd_display.T],
-                                [r"$\text{BoA}_{ours}$", r"$\text{BoA}_{GD}$"]):
+                                [r"$\mathrm{BoA}_{ours}$", r"$\mathrm{BoA}_{GD}$"]):
         ax.imshow(data, origin="lower", cmap=cmap,
                   vmin=0, vmax=K + 1, extent=[0, 1, 0, 1], aspect="equal")
         _scatter_optima(ax)
