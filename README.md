@@ -71,7 +71,7 @@ Diverse_LON/
 
 ## Step9. Trace our experiments
 RQ1
-Compare BoA
+Compare BoA:
 ```terminal
 python BoA_ex.py
 ```
@@ -83,7 +83,7 @@ python NS_ex.py
 ```
 
 RQ3
-benchmark, correlation and reggression analysi:
+benchmark, correlation and reggression analysis:
 ```terminal
 python benchmark_cor_reg_ex.py
 ```
