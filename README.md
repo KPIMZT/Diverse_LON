@@ -58,7 +58,7 @@ Install the remaining requirements:
 pip install -r requirements.txt
 ```
 
-## Step8. Download NS result data
+## Step8. Download NS results data
 To run the benchmark and correlation analysis without running NS, please download the results data from Zenodo.　(https://doi.org/10.5281/zenodo.19630354)
 
 directory structure  
