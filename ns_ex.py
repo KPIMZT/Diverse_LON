@@ -42,9 +42,9 @@ def run_ex_RQ2(dim, seed, I):
     colors = ["#0072B2",  "#009E73", "#E69F00"]
     from ns_viz import plot_grid_mpl
     if I == "y":
-        plot_grid_mpl(ns, population="novelty", color_discovered= colors[2], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_arch.svg")
+        plot_grid_mpl(ns, population="NS+", color_discovered= colors[2], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_arch.svg")
     elif I == "n":
-        plot_grid_mpl(ns, population="novelty", color_discovered= colors[1], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_nonarch.svg")
+        plot_grid_mpl(ns, population="NS", color_discovered= colors[1], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_nonarch.svg")
         plot_grid_mpl(ns, population="random", color_discovered= colors[0], save_path=f"./results_NS_reproduction/dim{dim}_seed{seed}_random.svg")
     save_ns(ns, ns_path)
 
