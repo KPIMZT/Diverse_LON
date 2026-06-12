@@ -1,7 +1,7 @@
 """
 ns_viz.py
 =============
-Visualization functions for EvolutionStrategy (standalone, take ES as arg).
+Visualization functions.
 """
 
 import torch
