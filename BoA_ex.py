@@ -187,7 +187,7 @@ def visualize_comparison(
         "font.family": "serif",
         "mathtext.fontset": "cm",
     })
-    """D=2 only: side-by-side basin maps + disagreement."""
+    """D=2 only: side-by-side basin maps + differences."""
     K = opt_means.shape[0]
     base_cmap = plt.get_cmap("tab20", K)
     colors = [base_cmap(k) for k in range(K)] + [(0.0, 0.0, 0.0, 1.0)]
@@ -197,7 +197,7 @@ def visualize_comparison(
     gd_map     = gd_flat.reshape(resolution, resolution)
     gd_display = gd_map.copy()
     gd_display[gd_map < 0] = K
-    disagree   = (ana_map != gd_map) & (gd_map >= 0)
+    difference   = (ana_map != gd_map) & (gd_map >= 0)
 
     gd_found = np.isin(np.arange(K), np.unique(gd_flat[gd_flat >= 0]))
 
@@ -224,7 +224,7 @@ def visualize_comparison(
         ax.set_xticks(ticks); ax.set_yticks(ticks)
         ax.tick_params(labelsize=25)
         ax.tick_params(axis="x", pad=15)
-    axes[2].imshow(disagree.T.astype(float), origin="lower",
+    axes[2].imshow(difference.T.astype(float), origin="lower",
                    cmap="Reds", vmin=0, vmax=1,
                    extent=[0, 1, 0, 1], aspect="equal")
     _scatter_optima(axes[2])
@@ -296,7 +296,7 @@ def run_ex_RQ1(
 
         # ── metrics ───────────────────────────────────────────────────
         metrics = compute_metrics(ana_flat, gd_flat, K)
-        print(f"    disagree_rate={metrics['disagree_rate']:.4f}  "
+        print(f"    difference_rate={metrics['disagree_rate']:.4f}  "
               f"unconverged={metrics['n_unconverged']}")
 
         row = {"dim": dim, "instance": inst+1,
