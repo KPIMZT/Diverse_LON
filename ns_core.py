@@ -1,7 +1,7 @@
 """
 ns_core.py
 ==============
-EvolutionStrategy class: init, run, coverage, deduplication.
+Novelty Search for MSG landscape
 """
 
 import torch
