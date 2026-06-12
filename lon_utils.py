@@ -1,5 +1,5 @@
 """
-msg_lon_core.py
+lon_utils.py
 ===============
 Shared LON construction primitives.
 """
