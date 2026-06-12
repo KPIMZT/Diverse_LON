@@ -1,7 +1,7 @@
 """
 ns_io.py
 ============
-Save / load for EvolutionStrategy.
+Save / load for NS.
 """
 
 import os
@@ -27,7 +27,7 @@ _COVERAGE_ATTRS = (
 # ── save / load ──────────────────────────────────────────────────────────
 
 def save_ns(ns, path: str) -> None:
-    """Save EvolutionStrategy state to .pt file."""
+    """Save Novelty Search state to .pt file."""
     os.makedirs(os.path.dirname(path) if os.path.dirname(path) else ".", exist_ok=True)
 
     payload = {attr: getattr(ns, attr) for attr in _SCALAR_ATTRS}
@@ -55,7 +55,7 @@ def save_ns(ns, path: str) -> None:
     print(f"saved: {path}")
 
 def load_ns(path: str, device: str = "cpu"):
-    """Load EvolutionStrategy state from .pt file.
+    """Load Novelty Search state from .pt file.
 
     The loaded instance supports analysis (coverage, visualization)
     but not resuming run() (generators are not restored).
