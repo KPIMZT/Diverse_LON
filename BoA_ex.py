@@ -1,5 +1,5 @@
 """
-basin_compare.py
+BoA_ex.py
 ================
 Compare analytical basin assignment vs gradient-descent basin assignment
 for D=2, 5, 10 MSG instances.
