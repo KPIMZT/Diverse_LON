@@ -1,5 +1,5 @@
 """
-msg_cor_analyze.py
+cor_reg_core.py
 ============
 Analyze correlation between algorithms performances and LONs features.
 """
